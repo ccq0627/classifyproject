@@ -19,6 +19,8 @@
 - data/train/ants, bees, pizza, steak, sushi
 - data/test/ants, bees, pizza, steak, sushi
 
+数据集在[这里下载](https://drive.google.com/drive/folders/1Rq0cSSPIEcWp5XA4XGC7_y1FVB2OIRWR)。
+
 ## 环境配置
 
 ### 1. Python 版本
@@ -78,6 +80,10 @@ python test.py --image_path classifyproject\make_prediction\OIP-C.jpg --device c
 ### 3. 推理展示
 
 可使用 make_prediction 目录中的测试图像进行可视化预测，脚本会弹出图片并显示预测结果。
+
+示例：
+
+![Testing Result](results/prediction_result.png)
 
 ## 目录说明
 
