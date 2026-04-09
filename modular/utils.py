@@ -35,10 +35,10 @@ def plot_result(result: Dict[str, List[float]]) -> None:
     plt.legend()
 
     plt.tight_layout()
-    if not osp.exists("classifyproject/results"):
-        os.makedirs("classifyproject/results")
-    plt.savefig("classifyproject/results/exp_result.png")
-    print("Experiment result plot saved to classifyproject/results/exp_result.png")
+    if not osp.exists("results"):
+        os.makedirs("results")
+    plt.savefig("results/exp_result.png")
+    print("Experiment result plot saved to results/exp_result.png")
 
 
 def set_seed(seed) -> None:

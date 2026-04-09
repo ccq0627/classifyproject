@@ -26,7 +26,7 @@ def make_prediction(args: Namespace) -> None:
     model = vit_b_16(weights=weights)
 
     model.heads.head = torch.nn.Linear(in_features=model.heads.head.in_features, out_features=5)
-    model.load_state_dict(torch.load("classifyproject/models/best_model.pth"))
+    model.load_state_dict(torch.load("models/best_model.pth"))
 
     classes = ['ants', 'bees', 'pizza', 'steak', 'sushi']
 
@@ -45,6 +45,7 @@ def make_prediction(args: Namespace) -> None:
     plt.title(f"Predicted: {classes[pred_label.item()]}, with prob: {pred_value.item()*100:.2f}%")
     plt.axis("off")
     plt.tight_layout()
+    plt.savefig("results/prediction_result.png")
     plt.show()
 
 if __name__ == "__main__":
@@ -53,7 +54,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--image_path", 
         type=str, 
-        default="classifyproject/make_prediction/OIP-C.jpg", 
+        default="make_prediction/OIP-C.jpg", 
         help="Path to the image for prediction"
     )
     parser.add_argument(

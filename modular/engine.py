@@ -92,8 +92,8 @@ class Trainer(nn.Module):
             "test_acc": []
         }
         test_best_acc = 0.0
-        if not osp.exists("classifyproject/models"):
-            os.makedirs("classifyproject/models")
+        if not osp.exists("models"):
+            os.makedirs("models")
         for epoch in range(self.epochs):
 
             train_loss, train_acc = self._train_step(
@@ -119,7 +119,7 @@ class Trainer(nn.Module):
 
             if test_acc > test_best_acc:
                 test_best_acc = test_acc
-                torch.save(self.model.state_dict(), "classifyproject/models/best_model.pth")
+                torch.save(self.model.state_dict(), "models/best_model.pth")
 
         return result
     
