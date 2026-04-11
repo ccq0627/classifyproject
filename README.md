@@ -51,7 +51,7 @@ python train.py --data_dir <data_dir> --epochs 5 --batch_size 32 --device cpu --
 ### 5. 运行单图预测
 
 ```powershell
-python test.py --image_path classifyproject\make_prediction\OIP-C.jpg --device cpu
+python test.py --image_path <image-path> --device cpu
 ```
 
 预测脚本会输出：
